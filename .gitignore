@@ -4,6 +4,16 @@
 # netbeans project files
 nbproject
 
+#tmp
+*.user
+*.vs
+*.suo
+*.bak
+*.cache
+*.log
+*.tmp
+*.orig
+
 # zend studio for eclipse project files
 .buildpath
 .project

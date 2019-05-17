@@ -14,10 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'contraseña')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'contraseña')->passwordInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success', 'disabled' => true ]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -27,8 +27,8 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'contraseña'], 'required'],
-            [['nombre', 'contraseña'], 'string', 'max' => 20],
+            [['nombre', 'contraseña'], 'required', 'message' => '{attribute} no puede estar vacío'],
+            [['nombre', 'contraseña'], 'string', 'max' => 20, 'message' => '{attribute} máximo 20 caracteres'],
         ];
     }
 

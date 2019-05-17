@@ -37,6 +37,7 @@ class Producto extends \yii\db\ActiveRecord
             [['stock', 'activo', 'categoria'], 'integer'],
             [['nombre'], 'string', 'max' => 20],
             [['detalle', 'imagen'], 'string', 'max' => 100],
+            [['categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categoria::className(), 'targetAttribute' => ['categoria' => 'id']],
         ];
     }
 

@@ -8,7 +8,6 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Usuarios Registrados');
-//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-index">
 
@@ -18,7 +17,7 @@ $this->title = Yii::t('app', 'Usuarios Registrados');
         <?= Html::a(Yii::t('app', 'Ingresar Nuevo Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,9 +25,7 @@ $this->title = Yii::t('app', 'Usuarios Registrados');
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
             'nombre',
-            //'contraseña',
 
             ['class' => 'yii\grid\ActionColumn', 'template' => '{update} {delete}'],
         ],

@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'contraseña')->passwordInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success', 'onclick'=>'disabled' ]) ?>
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success', 'disabled' => true ]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use Mpdf\Tag\Br;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -24,7 +25,7 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject', 'body'], 'required', 'message' => 'Este campo no puede estar vacío'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
@@ -38,7 +39,11 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'name' => 'Nombre',
+            'email' => 'Email',
+            'subject' => 'Asunto',
+            'body' => 'Mensaje',
+            'verifyCode' => 'Codigo de Verificación',
         ];
     }
 
@@ -52,12 +57,11 @@ class ContactForm extends Model
         if ($this->validate()) {
             Yii::$app->mailer->compose()
                 ->setTo($email)
-                ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
+                ->setFrom([$this->email => $this->name])
                 ->setReplyTo([$this->email => $this->name])
                 ->setSubject($this->subject)
                 ->setTextBody($this->body)
                 ->send();
-
             return true;
         }
         return false;

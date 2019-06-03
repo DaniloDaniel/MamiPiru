@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Usuario */
+/* @var $model app\models\Users */
 
-$this->title = Yii::t('app', 'Registrar Usuario');
+$this->title = Yii::t('app', 'Actualizar Usuario');
 
 ?>
-<div class="usuario-create">
+<div class="users-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

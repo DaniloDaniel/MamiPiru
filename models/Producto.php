@@ -3,7 +3,6 @@
 namespace app\models;
 
 use Yii;
-
 /**
  * This is the model class for table "producto".
  *
@@ -22,6 +21,8 @@ class Producto extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $upload; //TUTORIAL
+
     public static function tableName()
     {
         return 'producto';
@@ -34,10 +35,11 @@ class Producto extends \yii\db\ActiveRecord
     {
         return [
             [['nombre', 'stock', 'detalle', 'activo', 'categoria', 'imagen'], 'required'],
-            [['stock', 'activo', 'categoria'], 'integer'],
-            [['nombre'], 'string', 'max' => 20],
-            [['detalle', 'imagen'], 'string', 'max' => 100],
-            [['categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categoria::className(), 'targetAttribute' => ['categoria' => 'id']],
+            [['stock', 'activo', 'categoria'], 'integer', 'message' => '{attribute} debe ser un número entero', 'min' => 0],
+            [['nombre'], 'string', 'max' => 60],
+            [['detalle'], 'string', 'max' => 300],
+            [['imagen'], 'string', 'max' => 300], // TUTORIAL
+            [['upload'], 'file', 'extensions' => 'png, jpg'], //TUTORIAL
         ];
     }
 
@@ -51,9 +53,10 @@ class Producto extends \yii\db\ActiveRecord
             'nombre' => Yii::t('app', 'Nombre'),
             'stock' => Yii::t('app', 'Stock'),
             'detalle' => Yii::t('app', 'Detalle'),
-            'activo' => Yii::t('app', 'Activo'),
+            'activo' => Yii::t('app', '¿Producto en Catalogo?'),
             'categoria' => Yii::t('app', 'Categoria'),
-            'imagen' => Yii::t('app', 'Imagen'),
+            'upload' => Yii::t('app', 'Carga imagen'),
+            //'imagen' => Yii::t('app', 'Imagen'),
         ];
     }
 

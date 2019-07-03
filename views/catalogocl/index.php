@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = Yii::t('app', 'Catalogo');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="catalogo-index">
+<div class="catalogocl-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -19,17 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            [
-              'label' => 'Estado',
-              'value' => function($model)
-              {
-                return ($model->activo === 1)? 'Activo':'Inactivo';
-              }
-            ],
-            'nombre',
-            'imagen',
-
+                'nombre',
+                'imagen',
             ['class' => 'yii\grid\ActionColumn', 'template' => "{view}"],
         ],
     ]); ?>

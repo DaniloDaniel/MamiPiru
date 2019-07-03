@@ -41,8 +41,14 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'Acerca', 'url' => ['/site/about']],
             ['label' => 'Contacto', 'url' => ['/site/contact']],
-            ['label' => 'Crear producto', 'url' => ['/producto/index']],
-            ['label' => 'Catalogo', 'url' => ['/catalogo/index']],
+
+            ['label' => 'Crear producto','visible' => !Yii::$app->user->isGuest,'url' => ['/producto/index']],
+
+            ['label' => 'Administrar Catalogo','visible' => !Yii::$app->user->isGuest,'url' => ['/catalogo/index']],
+            
+            ['label' => 'Catalogo','visible' => Yii::$app->user->isGuest, 'url' => ['/catalogocl/index']],
+
+
             ['label' => 'Inventario', 'url' => ['/inventario/index']],
             ['label' => 'Administrar Usuarios', 'visible' => !Yii::$app->user->isGuest,'url' => ['/users/index']],
             Yii::$app->user->isGuest ? (

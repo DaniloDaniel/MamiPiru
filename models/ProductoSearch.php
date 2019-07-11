@@ -5,6 +5,8 @@ namespace app\models;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Producto;
+use app\controllers\CatalogoclController;
+use yii\web\Session;
 
 /**
  * ProductoSearch represents the model behind the search form of `app\models\Producto`.

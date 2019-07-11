@@ -47,6 +47,7 @@ AppAsset::register($this);
             ['label' => 'Administrar Catalogo','visible' => !Yii::$app->user->isGuest,'url' => ['/catalogo/index']],
             
             ['label' => 'Catalogo','visible' => Yii::$app->user->isGuest, 'url' => ['/catalogocl/index']],
+            ['label' => 'Carrito','visible' => Yii::$app->user->isGuest, 'url' => ['/catalogocl/carrito']],
 
 
             ['label' => 'Inventario', 'url' => ['/inventario/index']],

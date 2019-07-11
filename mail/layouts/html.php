@@ -1,5 +1,9 @@
 <?php
 use yii\helpers\Html;
+use kartik\grid\GridView;
+use app\controllers\CatalogoclController;
+use yii\helpers\VarDumper;
+use yii\helpers\ArrayHelper;
 
 /* @var $this \yii\web\View view component instance */
 /* @var $message \yii\mail\MessageInterface the message being composed */
@@ -15,7 +19,7 @@ use yii\helpers\Html;
 </head>
 <body>
     <?php $this->beginBody() ?>
-    <?= $content ?>
+    <?php ?>
     <?php $this->endBody() ?>
 </body>
 </html>
